@@ -20,7 +20,7 @@ void setup() {
 }
 
 void connectToWebSocket() {
-  client.beginSSL(WS_SERVER_HOST, WS_SERVER_PORT, "/?esp");
+  client.begin(WS_SERVER_HOST, WS_SERVER_PORT, "/?esp");
   client.onEvent(handleWebSocketEvent);
 }
 
