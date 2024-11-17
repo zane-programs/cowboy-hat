@@ -12,7 +12,7 @@ export default function App() {
   const webSocketRef = useRef<WebSocket>();
 
   useEffect(() => {
-    let reconnectInterval: NodeJS.Timeout | null = null;
+    let reconnectInterval: number | null = null;
 
     const connectWebSocket = () => {
       const socket = new WebSocket(SOCKET_URL);
@@ -29,7 +29,7 @@ export default function App() {
       const onClose = () => {
         setWebSocketIsOpen(false);
         if (!reconnectInterval) {
-          reconnectInterval = setInterval(() => {
+          reconnectInterval = window.setInterval(() => {
             console.log("Attempting to reconnect...");
             connectWebSocket();
           }, 2000);
