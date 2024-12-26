@@ -41,13 +41,7 @@ export default function App() {
           // setConnectedUsers(parseInt(ev.data.split(":")[1]));
           console.log(ev.data);
         } else {
-          setHexColor(
-            "#" +
-              ev.data
-                .split(",")
-                .map((item) => parseInt(item).toString(16).padStart(2, "0"))
-                .join("")
-          );
+          setHexColor(ev.data);
         }
       };
 
