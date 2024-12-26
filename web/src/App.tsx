@@ -1,4 +1,4 @@
-import { type ColorResult, Wheel } from "@uiw/react-color";
+import { type ColorResult } from "@uiw/react-color";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "./App.module.css";
@@ -7,7 +7,7 @@ const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
 
 export default function App() {
   const [hexColor, setHexColor] = useState<string>("#ffffff");
-  const [connectedUsers, setConnectedUsers] = useState<number>(-1);
+  // const [connectedUsers, setConnectedUsers] = useState<number>(-1);
   const [webSocketIsOpen, setWebSocketIsOpen] = useState<boolean>(false);
   const webSocketRef = useRef<WebSocket>();
 
@@ -38,7 +38,8 @@ export default function App() {
 
       const onMessage = (ev: MessageEvent<string>) => {
         if (ev.data.indexOf("users:") === 0) {
-          setConnectedUsers(parseInt(ev.data.split(":")[1]));
+          // setConnectedUsers(parseInt(ev.data.split(":")[1]));
+          console.log(ev.data);
         } else {
           setHexColor(
             "#" +
@@ -72,10 +73,10 @@ export default function App() {
     };
   }, []);
 
-  const handleColorChange = useCallback(({ hex, rgb }: ColorResult) => {
-    setHexColor(hex);
-    webSocketRef.current?.send(`${rgb.r},${rgb.g},${rgb.b}`);
-  }, []);
+  // const handleColorChange = useCallback(({ hex, rgb }: ColorResult) => {
+  //   setHexColor(hex);
+  //   webSocketRef.current?.send(`${rgb.r},${rgb.g},${rgb.b}`);
+  // }, []);
 
   return (
     <div className={styles.container}>
