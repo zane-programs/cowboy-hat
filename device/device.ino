@@ -7,6 +7,7 @@ const char *HOSTNAME = "cowboy-hat";
 
 // {R, G, B}
 const uint8_t GPIO_RGB[3] = {25, 26, 27};
+// const uint8_t GPIO_RGB[3] = {T7,T6,T5};
 const uint8_t GPIO_STATUS_LED = 2;
 
 WebSocketsClient client;

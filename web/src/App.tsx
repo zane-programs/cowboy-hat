@@ -90,11 +90,12 @@ export default function App() {
             >
               Choose My Color
             </h1>
-            <Wheel color={hexColor} onChange={handleColorChange} />
+            <p>{hexColor}</p>
+            {/* <Wheel color={hexColor} onChange={handleColorChange} />
             <p>
               This page is being viewed by {connectedUsers}{" "}
               {connectedUsers === 1 ? "person" : "people"}
-            </p>
+            </p> */}
           </>
         ) : (
           <>
