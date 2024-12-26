@@ -1,5 +1,5 @@
-import { type ColorResult } from "@uiw/react-color";
-import { useCallback, useEffect, useRef, useState } from "react";
+// import { type ColorResult } from "@uiw/react-color";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./App.module.css";
 
